@@ -1,0 +1,42 @@
+﻿p212-chamillard 2000
+Evaluating Programming Ability in an Introductory Computer Science Course
+Yhdistää eri tehtäviä/arviointitekniikoita opiskelijoiden ohjelmointitaidon arvioimiseen. Tarkastelee mm. arviointitekniikoiden välistä korrelaatiota. Ryhmätyö ei oleellinen arvioinnin kannalta, kaikki muut korreloivat kohtalaisen vahvasti.
+
+
+
+p210-daly 2004
+Assessing the Assessment of Programming Ability
+Arvioi ja vertailee kirjallista koetta, ohjelmointitehtäviä ja lab examia (arvostelu pelkästään ohjelman tulosteen oikeellisuuden perusteella). Lab exam todetaan näistä parhaaksi opiskelijan ohjelmointitaidon mittariksi.
+
+p137-woit 2003
+Effectiveness of Online Assessment
+Opiskelijoiden kurssisuoritus arvosteltiin eri vuosina eri tavoilla: Partially marked laboratories, no midterm; Voluntary laboratories with online midterm;  Marked laboratories with online midterm; Online weekly laboratory quizzes, no midterm. Viikottaiset online-testit todettiin hyviksi ja perinteinen paperikoe näiden kanssa tarpeettomaksi.
+
+p159-chamillard 2001
+Using Lab Practica to Evaluate Programming Ability
+Ensimmäisen vuoden opiskelijoiden ohjelmointitaitoa mitattiin koneilla tehtävillä ohjelmointitehtävillä (Lab Practica). Olivat tyytyväisiä tuloksiin.
+
+p217-califf 2002
+Testing Skills and Knowledge: Introducing a Laboratory Exam in CSl
+Toteaa lab examin olevan kirjallista koetta parempi ja auttanut arvioimaan paremmin ovatko opiskelijat tarpeeksi hyviä jatkamaan seuraavalle kurssille.
+
+p125-mccracken 2001
+A multi-national, multi-institutional study of assessment of programming skills of first-year CS students
+Testattiin neljän eri yliopiston ensimmäisen vuoden opiskelijoiden (216 kpl) ohjelmointitaitoa ohjelmointitehtävällä (yhdellä kolmesta). Toteaa opiskelijoiden osanneen tehtävän odotettua huonommin: keskimäärin 22.89/110 pistettä.
+
+p25-hagan 2000
+Does It Help to Have Some Programming Experience Before Beginning a Computing Degree Program?
+Tarkastellaan miten aikaisempi ohjelmointikokemus korreloi alkuvaiheen ohjelmointikurssien tulosten kanssa: yhden kielen osaaminen osaaminen auttaa, monella pärjää vielä paremmin. Kielten välillä ei juuri eroja.
+
+p39-bennedsen 2006
+Abstraction Ability as an Indicator of Success for Learning Object-Oriented Programming?
+Vertailtiin ~140 oppilaan abstraktiokyvyn ja ohjelmointitaidon (CS1), sekä matemaattisen osaamisen (lukion arvosana) suhdetta. Tulos yllättävä: eivät korreloi.
+
+p470-beck 2005
+Cooperative learning techniques in CS1: design and experimental evaluation
+Vertailevat kokeellisen pienryhmissä opiskeluun keskittyvän ryhmän ja verrokkiryhmän pärjäämistä kurssikokeissa. Pienryhmissä opiskelevat pärjäsivät jatkuvasti paremmin kurssin edetessä.
+
+p631-petersen 2011
+Reviewing CS1 exam question content
+Kävivät läpi 15 eri yliopistojen CS1 koetta vuosilta 2006-2010. Listasivat eri tehtävätyypit ja käsitteet joiden omaksumista tarvitsi osatakseen vastata kysymyksiin. Suurin osa kysymyksistä keskittyi koodin kirjoitamiseen. Ohjelmointiin liittyvät kysymykset vaativat keskimäärin 7 käsitteen omaksumista. Tämän arveltiin olevan syynä opiskelijoiden huonoon menestykseen kokeissa.
+

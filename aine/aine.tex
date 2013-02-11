@@ -1,0 +1,83 @@
+\documentclass[finnish]{../tktltiki2}
+
+% --- General packages ---
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
+\usepackage[pdftex,hidelinks]{hyperref}
+
+% Automatically set the PDF metadata fields
+\makeatletter
+\AtBeginDocument{\hypersetup{pdftitle = {\@title}, pdfauthor = {\@author}}}
+\makeatother
+
+% --- Language-related settings ---
+
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{finnish}
+
+\usepackage[nottoc,numbib]{tocbibind}
+\settocbibname{Lähteet}
+
+% --- Theorem environment definitions ---
+
+\newtheorem{lau}{Lause}
+\newtheorem{lem}[lau]{Lemma}
+\newtheorem{kor}[lau]{Korollaari}
+
+\theoremstyle{definition}
+\newtheorem{maar}[lau]{Määritelmä}
+\newtheorem{ong}{Ongelma}
+\newtheorem{alg}[lau]{Algoritmi}
+\newtheorem{esim}[lau]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem*{huom}{Huomautus}
+
+
+% --- tktltiki2 options ---
+
+\title{Opiskelijoiden ohjelmointitaidon arviointi \\ohjelmoinnin peruskurssilla}
+\author{Tomi Simsiö}
+\date{\today}
+\level{Aine}
+
+\begin{document}
+
+% --- Front matter ---
+
+\maketitle
+\tableofcontents
+\newpage
+
+
+% --- Main matter ---
+
+\section{Johdanto}
+
+
+\section{Paperikokeet}
+
+
+\section{Ohjelmointikokeet}
+
+
+\section{Ryhmätyöt}
+
+
+\section{Muut arviointimenetelmät}
+
+
+\section{Yhteenveto}
+
+
+
+% --- Back matter ---
+
+\bibliographystyle{babplain}
+\bibliography{../lahteet}
+
+
+\end{document}
