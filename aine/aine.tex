@@ -7,6 +7,8 @@
 \usepackage{microtype}
 \usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
 \usepackage[pdftex,hidelinks]{hyperref}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
 
 % Automatically set the PDF metadata fields
 \makeatletter
@@ -57,9 +59,17 @@
 
 \section{Johdanto}
 
-Ohjelmointitaidon mittaaminen on tärkeää, mutta vaikeaa. Jotta opiskelijat saadaan kehittämään ohjelmointitaitoaan ja ongelmanratkaisukykyään, täytyy opettajien pystyä mittaamaan näitä taitoja. Opiskelijoiden tulee myös tietää että arviointitekniikat mittaavat heidän osaamistansa täsmällisesti. Kun opiskelijat ymmärtävät että heidän täytyy osata ohjelmoida päästäkseen läpi kurssista, he alkavat kiinnostua ohjelmointitaitonsa kehittämisestä~\cite{DW04}.
+Ohjelmointitaidon mittaaminen on tärkeää, mutta vaikeaa. Jotta opiskelijat saadaan kehittämään ohjelmointitaitojaan ja ongelmanratkaisukykyjään, täytyy opettajien pystyä mittaamaan näitä taitoja. Opiskelijoiden tulee myös tietää että arviointitekniikat mittaavat heidän osaamistaan täsmällisesti. Kun opiskelijat ymmärtävät että heidän täytyy osata ohjelmoida päästäkseen läpi kurssista, he alkavat kiinnostua ohjelmointitaitojensa kehittämisestä~\cite{DW04}.
 
 Yleisesti käytössä olevat paperikokeet ovat osoittautuneet riittämättö\-mäksi ohjelmointitaidon mittariksi: opiskelijat eivät osaa tuottaa toimivia ohjelmia, vaikka ovat läpäisseet alkeiskurssin~\cite{MAD01}. Tämän seurauksena kurssien arviointia on lähdetty parantamaan ottamalla paperikokeiden rinnalle käyttöön muita arviointitapoja~\cite{CJ01, CG02, WM03}.
+
+Useissa artikkeleissa käytetty, ohjelmoinnin peruskurssiin viittaava termi "CS1" on peräisin ACM:n vuoden 1978 opetussuunnitelmasta~\cite{ACM78}. Siinä kurssin tavotteiksi asetetaan:
+\begin{itemize}
+  \item Tutustua ongelmanselvityksen menetelmiin ja algoritmien kehittämi\-seen.
+  \item Oppia jokin laajasti käytetty korkean tason ohjelmointikieli.
+  \item Oppia suunnittelemaan, ohjelmoimaan, testaamaan ja dokumentoimaan ohjelmia hyvän ohjelmointityylin mukaisesti.
+\end{itemize}
+Vaikka kyseinen opetussuunnitelma on päivitetty useasti tämän jälkeen ja termin käytöstä on myöhemmissä versioissa luovuttu, jatketaan sen käyttämistä lyhenteenä ohjelmoinnin alkeiskurssille~\cite{H10}.
 
 \section{Ohjelmointitaidon arviointimenetelmät}
 
@@ -75,7 +85,7 @@ Kokeet sisälsivät yhteensä 208 kysymystä, joista 95 (45,7\%) sisälsi koodin
 
 Koodin kirjoitusta vaativat kysymykset olivat pisteytyksessä vahvimmin painotettuja 59\% osuudellaan. Muiden ohjelmointiin liittyvien kysymysten osuus oli 23\%. Nämä osuudet vaihtelivat merkittävästi koulujen välillä: neljän koulun kokeet sisälsivät pelkästään ohjelmointiin liittyviä kysymyksiä ja kaksi keskittyi lähes pelkästään ohjelmointiin liittymättömään materiaaliin.
 
-Ohjelmointikäsitteitä tarvitsi hallita keskimäärin 5-7 osatakseen vastata koodin lukemista tai kirjoittamista sisältävään kysymykseen. Koepisteiden mukaan painotetut keskiarvot ovat yleisesti suurempia, mikä kertoo paljon pisteitä antavien kysymysten vaativan myös useampien käsitteiden hallitsemista. Tälle kohtalainen todistus on Spearmanin korrelaatiokerroin tarvittavien käsitteiden määrän ja kunkin kysymyksen painotuksen välillä, joka on 0.38.
+Ohjelmointikäsitteitä tarvitsi hallita keskimäärin 5-7 osatakseen vastata koodin lukemista tai kirjoittamista sisältävään kysymykseen. Koepisteiden mukaan painotetut keskiarvot ovat yleisesti korkeampia, mikä kertoo paljon pisteitä antavien kysymysten vaativan myös useampien käsitteiden hallitsemista. Tätä todistaa se, että Spearmanin korrelaatiokerroin tarvittavien käsitteiden määrän ja kunkin kysymyksen painotuksen välillä on 0.38.
 
 Tämä tarkoittaa sitä, että opiskelijoiden täytyy ymmärtää suuri osa kurssin aineistosta osatakseen vastata kysymyksiin, jotka vaikuttavat eniten arvosanaan. Jos opiskelija on ymmärtänyt väärin tai on epäluuloinen yhdestäkin vastaukseen vaadittavasta käsitteestä, tulee kysymykseen vastaamisesta vaikeaa. Tietojen näyttäminen korkeamman tason aiheista on myös hankalaa, jos jonkin alakäsitteen ymmärryksessä on virheitä tai puutteita. Nämä yhtenäistävät kysymykset antavat selvän enemmistön pisteitä tutkituissa kokeissa. Esimerkiksi keskimäärin yli kuuden käsitteen omaksumista vaativat kategoriat kattoivat 63\% kokeiden yhteispisteistä.
 
