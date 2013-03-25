@@ -72,6 +72,10 @@ Useissa artikkeleissa käytetty, ohjelmoinnin peruskurssiin viittaava termi "CS1
 \end{itemize}
 Vaikka kyseinen opetussuunnitelma on päivitetty useasti tämän jälkeen ja termin käytöstä on myöhemmissä versioissa luovuttu, jatketaan sen käyttämistä lyhenteenä ohjelmoinnin alkeiskurssille~\cite{H10}.
 
+\section{Ohjelmointitaito}
+
+
+
 \section{Ohjelmointitaidon arviointimenetelmät}
 
 Paperikokeiden tueksi on esitetty muun muassa ohjelmointikokeita (lab practicum, lab exam), ryhmätöitä ja yhdessä tehtäviä harjoitustöitä (collaborative lab).
@@ -80,7 +84,24 @@ Paperikokeiden tueksi on esitetty muun muassa ohjelmointikokeita (lab practicum,
 
 Paperikokeet ovat perinteinen tapa arvioida opiskelijan tietoja. Petersen, Craig ja Zingaro tutkivat 15 ohjelmoinnin peruskurssin (CS1) koetta 14:sta eri yliopistosta ja yrittävät selvittää, mitä ohjelmointitaitoja ja käsitteiden tuntemusta kunkin kysymyksen ratkaisemiseen tarvitaan~\cite{PCZ11}. He uskovat useiden käsitteiden oppimisen olevan toisistaan riippuvaista: opiskelija, joka ei täysin hallitse yhtä konseptia, ei pysty täysin oppimaan toista, joka tukeutuu ensimmäiseen. Tämän takia opiskelijoiden on vaikeaa näyttää osaamistaan kokeissa.
 
-Avukseen tutkimuksessa Petersen, Craig ja Zingaro ottivat yhdeksän kokenutta tietojenkäsittelytieteen opettajaa ja yhdessä he kokosivat useiden lähteiden perusteella 28 oleellisinta alkeiskurssilla tarvittavaa käsitettä. Kokeiden jokaisesta kysymyksestä määritettiin sen muoto (monivalinta, lyhyt vastaus, koodin kirjoittaminen, kaavion piirto), sisältö (koodin kirjoitus, koodin luku, käsitteiden hallinta, ei ohjelmointiin liittyvä), sekä laskettiin, kuinka monen käsitteen osaamista kysymyksessä arvioidaan ja kuinka monta käsitettä lisäksi on hallittava osatakseen vastata kysymykseen.
+\begin{table}
+  \begin{tabular}{ c c c }
+    program structure & function structure & data flow \\
+    trivial syntax & variables & expressions \\
+    data types & booleans & if-else \\
+    sequential control flow & input/output & definite loops \\
+    indefinite loops & nested loops & strings \\
+    lists (arrays) & collections & trees \\
+    recursion & exceptions & object structure \\
+    basic OO & accessors/mutators & reference types \\
+    constructors & inheritance & polymorphism \\
+    visibility/scope \\
+  \end{tabular}
+\caption{Alkeiskurssin 28 oleellisinta käsitettä}
+\label{tab:kasitteet}
+\end{table}
+
+Avukseen tutkimuksessa Petersen, Craig ja Zingaro ottivat yhdeksän kokenutta tietojenkäsittelytieteen opettajaa ja yhdessä he kokosivat useiden lähteiden perusteella 28 oleellisinta alkeiskurssilla tarvittavaa käsitettä \ref{tab:kasitteet}. Kokeiden jokaisesta kysymyksestä määritettiin sen muoto (monivalinta, lyhyt vastaus, koodin kirjoittaminen, kaavion piirto), sisältö (koodin kirjoitus, koodin luku, käsitteiden hallinta, ei ohjelmointiin liittyvä), sekä laskettiin, kuinka monen käsitteen osaamista kysymyksessä arvioidaan ja kuinka monta käsitettä lisäksi on hallittava osatakseen vastata kysymykseen.
 
 Kokeet sisälsivät yhteensä 208 kysymystä, joista 95 (45,7\%) sisälsi koodin kirjoittamista ja 80 (38,5\%) koodin lukemista tai ohjelmointikäsitteiden hallintaa. Koodin kirjoittamista sisältävistä 12 luokiteltiin tyypin "lyhyt vastaus" alle. Niissä tehtävänä oli täydentää valmiina annettua koodia, esimerkiksi lisäämällä oikea lopettamisehto silmukkaan. Loput 83 kysymystä olivat muotoa "kirjoita tämä funktio/metodi/luokka/ohjelma".
 
@@ -112,7 +133,7 @@ Chamillardin ja Braunin järjestämällä kurssilla ryhmätyö suoritetaan lukuk
 
 Chamillard ja Braun tunnustavat, että ryhmätyö ei sisällä uutta opetussisältöä ja täten on epäselvää kehittääkö se opiskelijoiden ohjelmointitaitoa. Palautteen mukaan ryhmätyö motivoi opiskelijoita, joten Chamillard ja Braun uskovat sen tarjoaman kokemuksen olevan hyödyllinen. Yksilöiden ohjelmointitaidon arviointiin ryhmätyö ei sovellu.
 
-\subsection{Yhdessä tehtävät harjoitustyöt}
+\subsection{Harjoitustyöt}
 
 Chamillardin ja Braunin kurssilla opiskelijat tekevät 6 harjoitustyötä, joista neljälle on varattu 2 tuntia ohjattua aikaa luokassa. Harjoitusten vaikeusaste vaihtelee helpoimmasta, jossa asetetaan arvoja muuttujiin ja hallitaan yksinkertaisia lukuja ja tulostuksia, vaikeimpaan harjoitukseen, jossa käytetään taulukoita sekä tiedostolukua ja -kirjoitusta. Harjoitustöiden aikana opiskelijat saavat puhua ja tehdä yhteistyötä toistensa kanssa, mutta jokaisen täytyy palauttaa oma henkilökohtainen työnsä arvostelua varten.
 
@@ -126,19 +147,21 @@ Kurssin aikana pidettiin välikokeet kun lukukaudesta oli kulunut yksi ja kaksi 
 
 Peruskäsitteitä ja yksinkertaista logiikkaa käsittelevissä kysymyksissä ryhmät pärjäsivät yhtä hyvin, mikä viestii ryhmien lähestyneen kurssimateriaalia hyvin samankaltaisilla tavoilla. Koodin lukuun ja kirjoitukseen keskittyvät tehtävät vaativat syvällisempää ymmärrystä ohjelmointikielen rakenteista. Kokeellisen ryhmän opiskelijat pärjäsivät huomattavasti paremmin näissä tehtävissä, mikä vihjaa heidän ymmärtäneen kurssin avainasiat paremmin.
 
+\subsection{Automaattinen arviointi}
+
+
+
 \section{Arviointimenetelmien arviointi}
 
 Chamillardin ja Braunin aineisto koostuu yhteensä 1822 opiskelijan pisteytyksistä neljän vuoden kurssien ajalta, syksystä 1997 kevääseen 1999. Loppukokeen tilastoissa on mukana vain 1712 opiskelijan tulokset, sillä loput 110 eivät osallistuneet kokeeseen.
 
 Chamillard ja Braun havaitsivat yhdessä tehtävän harjoitustyön ja ryhmä\-työn arvosanojen olevan keskimäärin paljon parempia kuin itsenäisesti suoritettavien tehtävien. He arvelevat tämän johtuvan osin itsenäisten tehtävien suorituksen tapahtumisesta valvotussa tilassa aikarajan sisällä. Eroa saattaa muodostua myös itsenäisestä suorituksesta yhteiseen nähden, mutta Chamillard ja Braun eivät tiedä kuinka mitata tätä vaikutusta.
 
-Chamillard ja Braun pyrkivät todistamaan jokaisen arviointitekniikan mittaavan eri taitoja, tai mittaavaan niitä eri tavoilla. Käytännössä he haluavat nähdä eri arviointitekniikoiden tuottavan erilaiset jakaumat.
-
-Parittainen t-testi on yleinen työkalu tähän tarkoitukseen. Se olettaa kuitenkin vertailtavien jakaumien olevan normaalisti jakautuneita. Kolmogorov-Smirnovin testiä käyttämällä Chamillard ja Braun näkevät että yksikään jakaumista ei ole normaalisti jakautunut, joten t-testiä ei ole mahdollista käyttää. Käyttäen jakaumasta riippumatonta merkkitestiä he saavat tilastollisesti merkittävän todisteen siitä, että jokainen arviointitekniikka on toisista eroava.
+Chamillard ja Braun pyrkivät todistamaan jokaisen arviointitekniikan mittaavan eri taitoja, tai mittaavaan niitä eri tavoilla. Käytännössä he haluavat nähdä eri arviointitekniikoiden tuottavan erilaiset jakaumat. Käyttäen jakaumasta riippumatonta merkkitestiä he saavat tilastollisesti merkittävän todisteen siitä, että jokainen arviointitekniikka on toisista eroava.
 
 Chamillard ja Braun pitävät mielenkiintoisena sitä, miten opiskelijoiden suoritukset eri arviointitekniikoiden välillä liittyvät toisiinsa. Tätä tutkiakseen he laskevat jokaiselle arviointitekniikkaparille Pearsonin korrelaatiokertoimen. He havaitsevat jokaisen parin osoittavan tilastollisesti merkittävää lineaarista korrelaatiota.
 
-Vahvin korrelaatio on testien ja loppukokeen välillä. Chamillard ja Braun eivät pidä tätä yllättävänä, sillä ne ovat hyvin samanalaisia tekniikoita sekä tarkoituksensa että muotonsa puolesta. Kaksi seuraavaksi vahvinta korrelaatiota ovat yhdessä tehtävät harjoitustyöt ja testit, sekä ohjelmointikoe ja testit. Harjoitustöiden vahva korrelaatio loppukokeen kanssa niin ikään tukee teoriaa siitä, että opiskelijat jotka osaavat ohjelmoida, pärjäävät hyvin myös perinteisemmissä kokeissa.
+Chamillard ja Braun käyttävät yhtenä vertailukohtana testejä, mutta jättävät kertomatta mitä ne sisältävät. Vahvin korrelaatio on näiden testien ja loppukokeen välillä. Chamillard ja Braun eivät pidä tätä yllättävänä, sillä testit ja koe ovat hyvin samanalaisia tekniikoita sekä tarkoituksensa että muotonsa puolesta. Kaksi seuraavaksi vahvinta korrelaatiota ovat yhdessä tehtävät harjoitustyöt ja testit, sekä ohjelmointikoe ja testit. Harjoitustöiden vahva korrelaatio loppukokeen kanssa niin ikään tukee teoriaa siitä, että opiskelijat jotka osaavat ohjelmoida, pärjäävät hyvin myös perinteisemmissä kokeissa.
 
 Kaikissa heikoimmissa korrelaatioissa korrelaatioparin toisena osapuolena on ryhmätyö. Chamillard ja Braun epäilevät tämän johtuvan muun muassa siitä, että ryhmätyössä yksilön panoksella on pienin merkitys arviointiin. Tämän takia he eivät pidä ryhmätyötä oleellisena arvioinnin kannalta, vaan mahdollisuutena antaa opiskelijoiden kokea ryhmässä työskentelyn hyödyt ja haitat.
 
