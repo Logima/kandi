@@ -1,0 +1,168 @@
+\documentclass[finnish]{../tktltiki2}
+
+% --- General packages ---
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
+\usepackage[pdftex,hidelinks]{hyperref}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+% Automatically set the PDF metadata fields
+\makeatletter
+\AtBeginDocument{\hypersetup{pdftitle = {\@title}, pdfauthor = {\@author}}}
+\makeatother
+
+% --- Language-related settings ---
+
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{finnish}
+
+\usepackage[nottoc]{tocbibind}
+\settocbibname{Lähteet}
+
+% --- Theorem environment definitions ---
+
+\newtheorem{lau}{Lause}
+\newtheorem{lem}[lau]{Lemma}
+\newtheorem{kor}[lau]{Korollaari}
+
+\theoremstyle{definition}
+\newtheorem{maar}[lau]{Määritelmä}
+\newtheorem{ong}{Ongelma}
+\newtheorem{alg}[lau]{Algoritmi}
+\newtheorem{esim}[lau]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem*{huom}{Huomautus}
+
+
+% --- tktltiki2 options ---
+
+\title{Opiskelijoiden ohjelmointitaidon arviointi \texorpdfstring{\\}{}ohjelmoinnin peruskurssilla}
+\author{Tomi Simsiö}
+\date{\today}
+\level{Kandidaatintutkielma}
+
+\begin{document}
+
+% --- Front matter ---
+
+\maketitle
+\tableofcontents
+\newpage
+
+
+% --- Main matter ---
+
+\section{Johdanto}
+
+Ohjelmointitaidon mittaaminen on tärkeää, mutta vaikeaa. Jotta opiskelijat saadaan kehittämään ohjelmointitaitojaan ja ongelmanratkaisukykyjään, täytyy opettajien pystyä mittaamaan näitä taitoja. Opiskelijoiden tulee myös tietää että arviointitekniikat mittaavat heidän osaamistaan täsmällisesti. Kun opiskelijat ymmärtävät että heidän täytyy osata ohjelmoida päästäkseen läpi kurssista, he alkavat kiinnostua ohjelmointitaitojensa kehittämisestä~\cite{DW04}.
+
+Yleisesti käytössä olevat paperikokeet ovat osoittautuneet riittämättö\-mäksi ohjelmointitaidon mittariksi: opiskelijat eivät osaa tuottaa toimivia ohjelmia, vaikka ovat läpäisseet alkeiskurssin~\cite{MAD01}. Tämän seurauksena kurssien arviointia on lähdetty parantamaan ottamalla paperikokeiden rinnalle käyttöön muita arviointitapoja~\cite{CJ01, CG02, WM03}.
+
+Useissa artikkeleissa käytetty, ohjelmoinnin peruskurssiin viittaava termi "CS1" on peräisin ACM:n vuoden 1978 opetussuunnitelmasta~\cite{ACM78}. Siinä kurssin tavotteiksi asetetaan:
+\begin{itemize}
+  \item Ongelmanselvityksen menetelmiin ja algoritmien kehittämiseen tutustuminen.
+  \item Jokin laajasti käytetyn korkean tason ohjelmointikielen oppiminen.
+  \item Suunnitella, ohjelmoida, testata ja dokumentoida ohjelmia hyvän ohjelmointityylin mukaisesti.
+\end{itemize}
+Vaikka kyseinen opetussuunnitelma on päivitetty useasti tämän jälkeen ja termin käytöstä on myöhemmissä versioissa luovuttu, jatketaan sen käyttämistä lyhenteenä ohjelmoinnin alkeiskurssille~\cite{H10}.
+
+\section{Ohjelmointitaidon arviointimenetelmät}
+
+Paperikokeiden tueksi on esitetty muun muassa ohjelmointikokeita (lab practicum, lab exam), ryhmätöitä ja yhdessä tehtäviä harjoitustöitä (collaborative lab).
+
+\subsection{Paperikokeet}
+
+Paperikokeet ovat perinteinen tapa arvioida opiskelijan tietoja. Petersen, Craig ja Zingaro tutkivat 15 ohjelmoinnin peruskurssin (CS1) koetta 14:sta eri yliopistosta ja yrittävät selvittää, mitä ohjelmointitaitoja ja käsitteiden tuntemusta kunkin kysymyksen ratkaisemiseen tarvitaan~\cite{PCZ11}. He uskovat useiden käsitteiden oppimisen olevan toisistaan riippuvaista: opiskelija, joka ei täysin hallitse yhtä konseptia, ei pysty täysin oppimaan toista, joka tukeutuu ensimmäiseen. Tämän takia opiskelijoiden on vaikeaa näyttää osaamistaan kokeissa.
+
+Avukseen tutkimuksessa Petersen, Craig ja Zingaro ottivat yhdeksän kokenutta tietojenkäsittelytieteen opettajaa ja yhdessä he kokosivat useiden lähteiden perusteella 28 oleellisinta alkeiskurssilla tarvittavaa käsitettä. Kokeiden jokaisesta kysymyksestä määritettiin sen muoto (monivalinta, lyhyt vastaus, koodin kirjoittaminen, kaavion piirto), sisältö (koodin kirjoitus, koodin luku, käsitteiden hallinta, ei ohjelmointiin liittyvä), sekä laskettiin, kuinka monen käsitteen osaamista kysymyksessä arvioidaan ja kuinka monta käsitettä lisäksi on hallittava osatakseen vastata kysymykseen.
+
+Kokeet sisälsivät yhteensä 208 kysymystä, joista 95 (45,7\%) sisälsi koodin kirjoittamista ja 80 (38,5\%) koodin lukemista tai ohjelmointikäsitteiden hallintaa. Koodin kirjoittamista sisältävistä 12 luokiteltiin tyypin "lyhyt vastaus" alle. Niissä tehtävänä oli täydentää valmiina annettua koodia, esimerkiksi lisäämällä oikea lopettamisehto silmukkaan. Loput 83 kysymystä olivat muotoa "kirjoita tämä funktio/metodi/luokka/ohjelma".
+
+Koodin kirjoitusta vaativat kysymykset olivat pisteytyksessä vahvimmin painotettuja 59\% osuudellaan. Muiden ohjelmointiin liittyvien kysymysten osuus oli 23\%. Nämä osuudet vaihtelivat merkittävästi koulujen välillä: neljän koulun kokeet sisälsivät pelkästään ohjelmointiin liittyviä kysymyksiä ja kaksi keskittyi lähes pelkästään ohjelmointiin liittymättömään materiaaliin.
+
+Ohjelmointikäsitteitä tarvitsi hallita keskimäärin 5-7 osatakseen vastata koodin lukemista tai kirjoittamista sisältävään kysymykseen. Koepisteiden mukaan painotetut keskiarvot ovat yleisesti korkeampia, mikä kertoo pisteitä antavien kysymysten vaativan myös useampien käsitteiden hallitsemista.
+
+Tämä tarkoittaa sitä, että opiskelijoiden täytyy ymmärtää suuri osa kurssin aineistosta osatakseen vastata kysymyksiin, jotka vaikuttavat eniten arvosanaan. Jos opiskelija on ymmärtänyt väärin tai on epäluuloinen yhdestäkin vastaukseen vaadittavasta käsitteestä, tulee kysymykseen vastaamisesta vaikeaa. Tietojen näyttäminen korkeamman tason aiheista on myös hankalaa, jos jonkin alakäsitteen ymmärryksessä on virheitä tai puutteita. Nämä yhtenäistävät kysymykset antavat selvän enemmistön pisteitä tutkituissa kokeissa. Esimerkiksi keskimäärin yli kuuden käsitteen omaksumista vaativat kategoriat kattoivat 63\% kokeiden yhteispisteistä.
+
+Petersen, Craig ja Zingaro uskovat koekysymysten olevan syynä monien huonoon menestykseen ohjelmoinnin peruskurssilla. Huippuoppilaat, jotka pystyvät sisäistämään lähes kaikki kurssilla opetetut käsitteet, pärjäävät hyvin kokeessa, mutta monet kohtaavat käsitteitä joita he eivät täysin ymmärrä. Tällöin he eivät välttämättä onnistu näyttämään muiden käsitteiden osaamistaan, jättäen osaamisestaan todellisuutta huonomman vaikutelman sekä itselleen että kurssin arvostelijalle.
+
+\subsection{Ohjelmointikokeet}
+
+Ohjelmointikokeissa opiskelijat toteuttavat ja testaavat rajatussa ajassa tehtävänannon mukaisen ohjelman ilman ulkopuolista apua. Käytössään heillä on lehtinen kurssin aikana opetetuista asioista. Kokeen valvojat eivät anna apua ongelman ratkaisua koskeviin kysymyksiin. Ohjelmointikokeella pyritään saavuttamaan paperikokeen korvaava tai sitä täydentävä arviointi, joka ei mittaa muuta kuin opiskelijan ohjelmointitaitoa~\cite{CB00, DW04}.
+
+Chamillard ja Braun esittelevät tällaista arviointitekniikkaa artikkelissaan "Evaluating Programming Ability in an Introductory Computer Science Course"~\cite{CB00}. He pitivät ohjelmoinnin peruskurssin aikana kaksi ohjelmointikoetta: ensimmäinen kurssin puolivälissä ja toinen noin kolme viikkoa ennen kurssin loppua.
+
+Chamillard ja Braun kertovat näiden kokeiden aiheuttavan stressiä opiskelijoissa. Tavallisen kokeeseen liittyvän stressin lisäksi painetta aiheuttaa tarve saada ohjelma valmiiksi aikarajan sisällä. Vaikka ohjelmointikokeet ovat samanlaisia yhdessä tehtävien harjoitustöiden kanssa, joita opiskelijat ovat jo suorittaneet, ovat Chamillard ja Braun havainneet opiskelijoiden saavan ohjelmointikokeista huomattavasti heikompia arvosanoja. He myöskin huomasivat opiskelijoiden kaipaavan enemmän apua kurssin asioissa, joita he eivät ole ymmärtäneet ohjelmointikokeiden lähestyessä. Ohjelmointikokeet näyttävät siis toimivan hyvän ohjelmointitaidon arviointikeinon lisäksi opiskelijoille kannustimena ymmärtää ohjelmointikäsitteitä.
+
+Myös Daly ja Waldron vertailevat artikkelissaan "Assessing the assessment of programming ability" ohjelmointikoetta paperikokeeseen~\cite{DW04}. Heidän kurssillaan ohjelmointikokeet pidetään seitsemännellä ja 12. viikolla. Lisäksi viikkoa ennen ensimmäistä koetta pidetään harjoituskoe, jossa he näkevät kuinka kokeessa toimitaan. Mukaansa kokeisiin opiskelijat saavat ottaa itse tehdyn A4-kokoisen lunttilapun, joka saa sisältää mitä tahansa. Myös tämän lapun luontiprosessi saattaa olla opettavainen. Koetilaisuus kestää kaksi tuntia. Opiskelijoille jaetaan tehtävät paperilla ja ensimmäisen puolen tunnin aikana he eivät saa käyttää tietokoneita. Tällä pyritään rohkaisemaan opiskelijoita lukemaan tehtävänanto rauhassa ja suunnittelemaan ratkaisuaan etukäteen.
+
+Dalyn ja Waldronin ohjelmointikokeissa opiskelijoiden tulee toteuttaa lyhyet, korkeintaan 10 koodirivin, ratkaisut kolmeen erilliseen tehtävään. Näistä ensimmäinen vaatii ratkaisukseen hyvin yksinkertaisen ohjelman, toinen hieman haastavamman ja viimeinen kysymys pyritään asettelemaan siten, että osa ongelmaa on selvittää mitä tehtävänannossa kysytään.
+
+Tehtävien ratkaisut arvostellaan automaattisesti pelkästään niiden antaman tulosteen perusteella. Tämä vaatii tehtävien tarkkaa testausta ennen kokeita. Automaattiset testit kuitenkin säästävät kurssin järjestäjät manuaaliselta kokeiden korjaukselta ja opiskelijat saavat tietää kokeensa tulokset heti palautettuaan ratkaisukoodinsa.
+
+\subsection{Ryhmätyöt}
+
+Chamillardin ja Braunin järjestämällä kurssilla ryhmätyö suoritetaan lukukauden loppupuolella 2-4 hengen ryhmissä. Siinä tutustutetaan opiskelijat ryhmädynamiikkaan ja tarjotaan kokemus projektista, joka on liian iso yhden opiskelijan tehtäväksi.
+
+Chamillard ja Braun tunnustavat, että ryhmätyö ei sisällä uutta opetussisältöä ja täten on epäselvää kehittääkö se opiskelijoiden ohjelmointitaitoa. Palautteen mukaan ryhmätyö motivoi opiskelijoita, joten Chamillard ja Braun uskovat sen tarjoaman kokemuksen olevan hyödyllinen. Yksilöiden ohjelmointitaidon arviointiin ryhmätyö ei sovellu.
+
+\subsection{Yhdessä tehtävät harjoitustyöt}
+
+Chamillardin ja Braunin kurssilla opiskelijat tekevät 6 harjoitustyötä, joista neljälle on varattu 2 tuntia ohjattua aikaa luokassa. Harjoitusten vaikeusaste vaihtelee helpoimmasta, jossa asetetaan arvoja muuttujiin ja hallitaan yksinkertaisia lukuja ja tulostuksia, vaikeimpaan harjoitukseen, jossa käytetään taulukoita sekä tiedostolukua ja -kirjoitusta. Harjoitustöiden aikana opiskelijat saavat puhua ja tehdä yhteistyötä toistensa kanssa, mutta jokaisen täytyy palauttaa oma henkilökohtainen työnsä arvostelua varten.
+
+Chamillardin ja Braunin mukaan yhdessä tehtävät harjoitustyöt tekevät ohjelmoinnin oppimisesta mahdollisimman helppoa. Vaikka paikalla olisi ohjaajiakin, on hyödyllistä sallia opiskelijoiden kysyä neuvoa myös toisiltaan. Joidenkin opiskelijoiden on havaittu oppivan paremmin muiden kanssa. Yhdessä tehtävät harjoitustyöt tarjoavat näille opiskelijoille tehokkaan oppimisympäristön. Muuten hyvän metodin varjopuolena on ryhmätöiden tapaan vaikea arviointi, joka ei anna tarkkaa kuvaa yksilön taitotasosta.
+
+Opiskelijoiden keskenäisen yhteistyön vaikutuksiin kurssimenestyksen kannalta keskittyvät myös Beck, Chizhik ja McElroy artikkelissaan "Cooperative learning techniques in CS1: design and experimental evaluation"~\cite{BCM05}. He jakoivat 84 kurssin aloittanutta opiskelijaa kokeelliseen- ja verrokkiryhmään, pitäen huolta sukupuolten ja etnisten taustojen jakautumisesta tasaisesti.
+
+Kaikki opiskelijat kävivät viikottain yhteisillä luennoilla, mutta jakautuivat harjoitustilaisuuksiin. Verrokkiryhmän jäsenet kokoontuivat luokkaan tekemään tehtäviä ja kysymään kysymyksiä läpikäytävästä aiheesta perinteiseen tapaan. Kokeellisen ryhmän opiskelijat tekivät ryhmätehtäviä 4-5 hengen ryhmissä. Nämä pienryhmät sisälsivät jäseniä monista etnisistä- ja sukupuoliryhmistä. Ryhmät pysyivät samoina koko lukukauden ajan.
+
+Kurssin aikana pidettiin välikokeet kun lukukaudesta oli kulunut yksi ja kaksi kolmasosaa, sekä loppukoe. Ensimmäisessä välikokeessa molempien ryhmien opiskelijat saivat keskiarvoltaan lähes samat arvosanat, mutta toisessa välikokeessa kokeellinen ryhmä selviytyi paremmin ja ryhmien välinen ero kasvoi vielä suuremmaksi loppukokeessa.
+
+Peruskäsitteitä ja yksinkertaista logiikkaa käsittelevissä kysymyksissä ryhmät pärjäsivät yhtä hyvin, mikä viestii ryhmien lähestyneen kurssimateriaalia hyvin samankaltaisilla tavoilla. Koodin lukuun ja kirjoitukseen keskittyvät tehtävät vaativat syvällisempää ymmärrystä ohjelmointikielen rakenteista. Kokeellisen ryhmän opiskelijat pärjäsivät huomattavasti paremmin näissä tehtävissä, mikä vihjaa heidän ymmärtäneen kurssin avainasiat paremmin.
+
+\section{Arviointimenetelmien arviointi}
+
+Chamillardin ja Braunin aineisto koostuu yhteensä 1822 opiskelijan pisteytyksistä neljän vuoden kurssien ajalta, syksystä 1997 kevääseen 1999. Loppukokeen tilastoissa on mukana vain 1712 opiskelijan tulokset, sillä loput 110 eivät osallistuneet kokeeseen.
+
+Chamillard ja Braun havaitsivat yhdessä tehtävän harjoitustyön ja ryhmä\-työn arvosanojen olevan keskimäärin paljon parempia kuin itsenäisesti suoritettavien tehtävien. He arvelevat tämän johtuvan osin itsenäisten tehtävien suorituksen tapahtumisesta valvotussa tilassa aikarajan sisällä. Eroa saattaa muodostua myös itsenäisestä suorituksesta yhteiseen nähden, mutta Chamillard ja Braun eivät tiedä kuinka mitata tätä vaikutusta.
+
+Chamillard ja Braun pyrkivät todistamaan jokaisen arviointitekniikan mittaavan eri taitoja, tai mittaavaan niitä eri tavoilla. Käytännössä he haluavat nähdä eri arviointitekniikoiden tuottavan erilaiset jakaumat.
+
+Parittainen t-testi on yleinen työkalu tähän tarkoitukseen. Se olettaa kuitenkin vertailtavien jakaumien olevan normaalisti jakautuneita. Kolmogorov-Smirnovin testiä käyttämällä Chamillard ja Braun näkevät että yksikään jakaumista ei ole normaalisti jakautunut, joten t-testiä ei ole mahdollista käyttää. Käyttäen jakaumasta riippumatonta merkkitestiä he saavat tilastollisesti merkittävän todisteen siitä, että jokainen arviointitekniikka on toisista eroava.
+
+Chamillard ja Braun pitävät mielenkiintoisena sitä, miten opiskelijoiden suoritukset eri arviointitekniikoiden välillä liittyvät toisiinsa. Tätä tutkiakseen he laskevat jokaiselle arviointitekniikkaparille Pearsonin korrelaatiokertoimen. He havaitsevat jokaisen parin osoittavan tilastollisesti merkittävää lineaarista korrelaatiota.
+
+Vahvin korrelaatio on testien ja loppukokeen välillä. Chamillard ja Braun eivät pidä tätä yllättävänä, sillä ne ovat hyvin samanalaisia tekniikoita sekä tarkoituksensa että muotonsa puolesta. Kaksi seuraavaksi vahvinta korrelaatiota ovat yhdessä tehtävät harjoitustyöt ja testit, sekä ohjelmointikoe ja testit. Harjoitustöiden vahva korrelaatio loppukokeen kanssa niin ikään tukee teoriaa siitä, että opiskelijat jotka osaavat ohjelmoida, pärjäävät hyvin myös perinteisemmissä kokeissa.
+
+Kaikissa heikoimmissa korrelaatioissa korrelaatioparin toisena osapuolena on ryhmätyö. Chamillard ja Braun epäilevät tämän johtuvan muun muassa siitä, että ryhmätyössä yksilön panoksella on pienin merkitys arviointiin. Tämän takia he eivät pidä ryhmätyötä oleellisena arvioinnin kannalta, vaan mahdollisuutena antaa opiskelijoiden kokea ryhmässä työskentelyn hyödyt ja haitat.
+
+Daly ja Waldron etsivät kolmatta, erillistä, ohjelmointitaidon vertailukeinoa, jotta he pystyisivät arvioimaan ohjelmointikokeen toimivuutta paperikokeisiin nähden. Opiskelijat tekevät kolmantena vuotenaan ohjelmointiprojektin. Noin 70\% opiskelijoista suorittaa sen parityönä, joten projekti ei ole täysin tyydyttävä ratkaisu, mutta he valitsivat sen paremman vaihtoehdon puutteessa.
+
+Daly ja Waldron vertailivat kahta joukkoa: vuonna 1998 aloittaneita opiskelijoita, joita arvioitiin paperikokeella ja vuonna 2000 aloittaneita, joita arvioitiin ohjelmointikokeella. Ryhmien ulkopuolelle rajattiin opiskelijat, jotka eivät suorittaneet projektia, sekä opiskelijat, jotka pääsivät vuonna 2000 sisään alennetun pisterajan ansiosta.
+
+Pearsonin korrelaatiokerrointa käyttämällä Daly ja Waldron selvittivät paperikokeen ja ohjelmointikokeen tulosten lineaarista suhdetta ohjelmointiprojektin arvosanaan. Paperikokeen korrelaatio projektiin oli 0.18 ja ohjelmointikokeen vastaavasti 0.32. Heikot korrelaatiot ovat ymmärrettävissä ohjelmointiprojektin parityöpainotteisuuden ansiosta. Ohjelmointikokeen korrelaatio on kuitenkin huomattavasti korkeampi.
+
+Kun joukoista rajataan pois ohjelmointiprojektin parityönä suorittaneet opiskelijat, saadaan paperikokeen korrelaatioksi 0.32 ja ohjelmointikokeen korrelaatioksi 0.49. Molemmat korrelaatiot vahvistuivat, mutta ohjelmointikokeen arvosana on edelleen parempi ennuste ohjelmointiprojektin arvosanasta ja täten paperikoetta tarkempi ohjelmointitaidon arviointikeino.
+
+\section{Yhteenveto}
+
+Ohjelmoinnin alkeiskurssien ohjaajat joutuvat vaikean päätöksen eteen arviointitekniikoita valitessaan. Jotkut tekniikat auttavat enemmän opiskelijoita asian omaksumisessa ja toiset tarjoavat helpommat ja tarkemmat arviointimahdollisuudet.
+
+Chamillard ja Braun vertailivat useita arviointitekniikoita keskenään. He näyttivät jokaisen arviointitekniikan mittaavan ohjelmointitaitoa eri tavalla, eivätkä juuri ottaneet kantaa niiden paremmuusjärjestykseen ohjelmointitaidon mittareina.
+
+Daly ja Waldron vertailivat paperikoetta ja ohjelmointikoetta ohjelmointitaidon mittareina ja osoittivat ohjelmointikokeen antavan tarkempia tuloksia.
+
+
+% --- Back matter ---
+
+\bibliographystyle{babplain-lf}
+\bibliography{../lahteet}
+
+
+\end{document}
