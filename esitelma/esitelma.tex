@@ -1,0 +1,131 @@
+\documentclass[finnish]{beamer}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{babel}
+
+\author{Tomi Simsiö}
+\title{Opiskelijoiden ohjelmointitaidon arviointi \texorpdfstring{\\}{}ohjelmoinnin peruskurssilla}
+\institute{HELSINGIN YLIOPISTO\\Tietojenkäsittelytieteen laitos}
+\date{27. maaliskuuta 2013}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame
+{
+  \frametitle{Ohjelmointitaidon arviointimenetelmät}
+  \begin{itemize}
+    \item Paperikokeet
+    \item Ohjelmointikokeet
+    \item Ryhmätyöt
+    \item Harjoitustyöt
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Paperikokeet}
+  \begin{itemize}
+    \item Perinteinen arviointitapa ohjelmointikursseilla.
+    \item Osoitettu riittämättömäksi ohjelmointitaidon mittariksi.
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Paperikokeet}
+  \begin{table}
+    \begin{tabular}{ l c r }
+      program structure & function structure & data flow \\
+      trivial syntax & variables & expressions \\
+      data types & booleans & if-else \\
+      sequential control flow & input/output & definite loops \\
+      indefinite loops & nested loops & strings \\
+      lists (arrays) & collections & trees \\
+      recursion & exceptions & object structure \\
+      basic OO & accessors/mutators & reference types \\
+      constructors & inheritance & polymorphism \\
+      visibility/scope \\
+    \end{tabular}
+  \caption{Alkeiskurssin 28 oleellisinta käsitettä}
+  \label{tab:kasitteet}
+  \end{table}
+}
+
+\frame
+{
+  \frametitle{Ohjelmointikokeet}
+  \begin{itemize}
+    \item Tehtävänä toteuttaa ja testata rajatussa ajassa tehtävänannon mukainen ohjelma ilman ulkopuolista apua.
+    \item Pyritään saavuttamaan paperikokeen korvaava tai sitä täydentävä arviointi.
+    \item Mittaa ainoastaan opiskelijan ohjelmointitaitoa.
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Ryhmätyöt}
+  \begin{itemize}
+    \item Ei sovellu yksilöiden ohjelmointitaidon arviointiin.
+    \item Antaa kokemuksen isommasta projektista.
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Harjoitustyöt}
+  \begin{itemize}
+    \item Vaikeusaste ja tekemiseen tarvittava aika vaihtelee.
+    \item Keskustelu ja yhteistyö sallittua.
+    \item Jokaisen täytyy palauttaa oma henkilökohtainen työnsä.
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Arviointimenetelmien arviointi}
+  \begin{table}
+    \begin{tabular}{ l | c c }
+       & Keskiarvo & Keskihajonta \\
+      Harjoitustyöt & 90,81 & 23,40 \\
+      Ryhmätyö & 91,78 & 8,55 \\
+      Ohjelmointikokeet & 77,90 & 14,85 \\
+      Testit & 73,56 & 11,31 \\
+      Loppukoe & 74,99 & 16,84 \\
+    \end{tabular}
+  \caption{Arviointimenetelmien keskimääräiset arvosanat}
+  \label{tab:arviointimenetelmat}
+  \end{table}
+}
+
+\frame
+{
+  \frametitle{Arviointimenetelmien arviointi}
+  \begin{table}
+    \begin{tabular}{ l c }
+      Pari & Korrelaatio \\
+      \hline
+      Harjoitustyöt/Ryhmätyö & 0,249 \\
+      Harjoitustyöt/Ohjelmointikokeet & 0,569 \\
+      Harjoitustyöt/Testit & 0,603 \\
+      Harjoitustyöt/Loppukoe & 0,484 \\
+      Ryhmätyö/Ohjelmointikokeet & 0,155 \\
+      Ryhmätyö/Testit & 0,193 \\
+      Ryhmätyö/Loppukoe & 0,145 \\
+      Ohjelmointikokeet/Testit & 0,618 \\
+      Ohjelmointikokeet/Loppukoe & 0,593 \\
+      Testit/Loppukoe & 0,679 \\
+    \end{tabular}
+  \caption{Pearsonin korrelaatiokertoimet arviointimenetelmien välillä}
+  \label{tab:korrelaatiot}
+  \end{table}
+}
+
+\frame
+{
+  \frametitle{Kysymyksiä?}
+}
+
+\end{document}
