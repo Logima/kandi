@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage{babel}
+\usepackage{color}
 
 \author{Tomi Simsiö}
 \title{Opiskelijoiden ohjelmointitaidon arviointi \texorpdfstring{\\}{}ohjelmoinnin peruskurssilla}
@@ -15,7 +16,13 @@
 
 \frame
 {
-  \frametitle{Ohjelmointitaidon arviointimenetelmät}
+  \frametitle{Tutkimuskysymys}
+  {\LARGE Miten ohjelmointitaitoa pitäisi arvioida?}
+}
+
+\frame
+{
+  \frametitle{Käytössä olevat ohjelmointitaidon arviointimenetelmät}
   \begin{itemize}
     \item Paperikokeet
     \item Ohjelmointikokeet
@@ -27,9 +34,17 @@
 \frame
 {
   \frametitle{Paperikokeet}
+  Selitä selkeästi käsitteet parametri, kuormittaminen, kapselointi. Anna myös havainnollisia esimerkkejä.
+  \vspace{5mm}
+
+  \textcolor[rgb]{0.5,0.5,0.5}{\scriptsize Ohjelmoinnin perusteet, kurssikoe 19.10.2010}
+}
+
+\frame
+{
+  \frametitle{Paperikokeet}
   \begin{itemize}
     \item Perinteinen arviointitapa ohjelmointikursseilla.
-    \item Osoitettu riittämättömäksi ohjelmointitaidon mittariksi.
   \end{itemize}
 }
 
@@ -57,10 +72,28 @@
 \frame
 {
   \frametitle{Ohjelmointikokeet}
+  {\large\bf Snap}
+
+  You must write a program that will keep reading numbers from a user and stop as soon as two sequential numbers are the same. Then print however many numbers were entered:\\
+  Here is a sample run
+
+  \vspace{1mm}
+  {\tt \textcolor[rgb]{0.3,0.3,0.3}{ Enter numbers: }{\bf 25 3 10 2 3 19 7 7}\\
+  \textcolor[rgb]{0.3,0.3,0.3}{There were 8 numbers.}}
+
+  \vspace{1mm}
+  Note that the program stopped when two sevens in a row were detected.
+  \vspace{5mm}
+
+  \textcolor[rgb]{0.5,0.5,0.5}{\scriptsize Esimerkki ohjelmointikokeen tehtävästä, Assessing the Assessment of Programming Ability}
+}
+
+\frame
+{
+  \frametitle{Ohjelmointikokeet}
   \begin{itemize}
     \item Tehtävänä toteuttaa ja testata rajatussa ajassa tehtävänannon mukainen ohjelma ilman ulkopuolista apua.
     \item Pyritään saavuttamaan paperikokeen korvaava tai sitä täydentävä arviointi.
-    \item Mittaa ainoastaan opiskelijan ohjelmointitaitoa.
   \end{itemize}
 }
 
@@ -68,9 +101,34 @@
 {
   \frametitle{Ryhmätyöt}
   \begin{itemize}
-    \item Ei sovellu yksilöiden ohjelmointitaidon arviointiin.
+    \item Neljän suora
+    \item Laivanupotus
+    \item Othello
+  \end{itemize}
+  \vspace{5mm}
+
+  \textcolor[rgb]{0.5,0.5,0.5}{\scriptsize Esimerkkejä opiskelijoiden ryhmässä toteuttamista töistä, Evaluating Programming Ability in an Introductory Computer Science Course}
+}
+
+\frame
+{
+  \frametitle{Ryhmätyöt}
+  \begin{itemize}
     \item Antaa kokemuksen isommasta projektista.
   \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Harjoitustyöt}
+  \begin{itemize}
+    \item Tetris
+    \item Miinaharava
+    \item Olutmuistio
+  \end{itemize}
+  \vspace{5mm}
+
+  \textcolor[rgb]{0.5,0.5,0.5}{\scriptsize Esimerkkiaiheita ohjelmoinnin harjoitustyöhön}
 }
 
 \frame
@@ -92,7 +150,6 @@
       Harjoitustyöt & 90,81 & 23,40 \\
       Ryhmätyö & 91,78 & 8,55 \\
       Ohjelmointikokeet & 77,90 & 14,85 \\
-      Testit & 73,56 & 11,31 \\
       Loppukoe & 74,99 & 16,84 \\
     \end{tabular}
   \caption{Arviointimenetelmien keskimääräiset arvosanat}
@@ -109,18 +166,37 @@
       \hline
       Harjoitustyöt/Ryhmätyö & 0,249 \\
       Harjoitustyöt/Ohjelmointikokeet & 0,569 \\
-      Harjoitustyöt/Testit & 0,603 \\
       Harjoitustyöt/Loppukoe & 0,484 \\
       Ryhmätyö/Ohjelmointikokeet & 0,155 \\
-      Ryhmätyö/Testit & 0,193 \\
       Ryhmätyö/Loppukoe & 0,145 \\
-      Ohjelmointikokeet/Testit & 0,618 \\
       Ohjelmointikokeet/Loppukoe & 0,593 \\
-      Testit/Loppukoe & 0,679 \\
     \end{tabular}
   \caption{Pearsonin korrelaatiokertoimet arviointimenetelmien välillä}
   \label{tab:korrelaatiot}
   \end{table}
+}
+
+\frame
+{
+  \frametitle{Arviointimenetelmien vertailu}
+  \begin{itemize}
+    \item Paperikokeet
+      \begin{itemize}
+        \item<2-> Osoitettu riittämättömäksi ohjelmointitaidon mittariksi.
+      \end{itemize}
+    \item Ohjelmointikokeet
+      \begin{itemize}
+        \item<3-> Mittaa ainoastaan ohjelmointitaitoa.
+      \end{itemize}
+    \item Ryhmätyöt
+      \begin{itemize}
+        \item<4-> Ei sovellu ohjelmointitaidon arviointiin.
+      \end{itemize}
+    \item Harjoitustyöt
+      \begin{itemize}
+        \item<5-> Ei anna tarkkaa kuvaa ohjelmointitaidosta.
+      \end{itemize}
+  \end{itemize}
 }
 
 \frame
