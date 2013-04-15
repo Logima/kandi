@@ -40,3 +40,12 @@ p631-petersen 2011
 Reviewing CS1 exam question content
 Kävivät läpi 15 eri yliopistojen CS1 koetta vuosilta 2006-2010. Listasivat eri tehtävätyypit ja käsitteet joiden omaksumista tarvitsi osatakseen vastata kysymyksiin. Suurin osa kysymyksistä keskittyi koodin kirjoitamiseen. Ohjelmointiin liittyvät kysymykset vaativat keskimäärin 7 käsitteen omaksumista. Tämän arveltiin olevan syynä opiskelijoiden huonoon menestykseen kokeissa.
 
+p1-douce 2005
+Automatic test-based assessment of programming: A review
+AA:n historiaa ja yleistä selostusta.
+
+p133-saikkonen 2001
+Fully Automatic Assessment of Programming Exercises
+Scheme-robo
+
+
