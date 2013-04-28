@@ -51,39 +51,42 @@
 
 % --- Front matter ---
 
+\pagenumbering{roman}
 \maketitle
+\thispagestyle{empty}
 \tableofcontents
 \newpage
-
+\pagenumbering{arabic}
 
 % --- Main matter ---
 
 \section{Johdanto}
 
-Ohjelmointitaidon mittaaminen on tärkeää, mutta vaikeaa. Jotta opiskelijat saadaan kehittämään ohjelmointitaitojaan ja ongelmanratkaisukykyjään, täytyy opettajien pystyä mittaamaan näitä taitoja. Opiskelijoiden tulee myös tietää että arviointitekniikat mittaavat heidän osaamistaan täsmällisesti. Kun opiskelijat ymmärtävät että heidän täytyy osata ohjelmoida päästäkseen läpi kurssista, he alkavat kiinnostua ohjelmointitaitojensa kehittämisestä~\cite{DW04}.
+Ohjelmointitaidon mittaaminen on tärkeää mutta vaikeaa. Jotta opiskelijat saadaan kehittämään ohjelmointitaitojaan ja ongelmanratkaisukykyjään, täytyy opettajien pystyä mittaamaan näitä taitoja. Opiskelijoiden tulee myös tietää, että arviointitekniikat mittaavat heidän osaamistaan täsmällisesti. Kun opiskelijat ymmärtävät, että heidän täytyy osata ohjelmoida päästäkseen läpi kurssista, he alkavat kiinnostua ohjelmointitaitojensa kehittämisestä~\cite{DW04}.
 
 Yleisesti käytössä olevat paperikokeet ovat osoittautuneet riittämättö\-mäksi ohjelmointitaidon mittariksi: opiskelijat eivät osaa tuottaa toimivia ohjelmia, vaikka ovat läpäisseet alkeiskurssin~\cite{MAD01}. Tämän seurauksena kurssien arviointia on lähdetty parantamaan ottamalla paperikokeiden rinnalle käyttöön muita arviointitapoja~\cite{CJ01, CG02, WM03}.
 
-Useissa artikkeleissa käytetty, ohjelmoinnin peruskurssiin viittaava termi "CS1" on peräisin ACM:n vuoden 1978 opetussuunnitelmasta~\cite{ACM78}. Siinä kurssin tavotteiksi asetetaan:
+Useissa artikkeleissa käytetty, ohjelmoinnin peruskurssiin viittaava termi "CS1" on peräisin ACM:n vuoden 1978 opetussuunnitelmasta~\cite{ACM78}. Siinä kurssin tavotteiksi asetetaan
 \begin{itemize}
-  \item Ongelmanselvityksen menetelmiin ja algoritmien kehittämiseen tutustuminen.
-  \item Jokin laajasti käytetyn korkean tason ohjelmointikielen oppiminen.
-  \item Suunnitella, ohjelmoida, testata ja dokumentoida ohjelmia hyvän ohjelmointityylin mukaisesti.
+  \item ongelmanselvityksen menetelmiin ja algoritmien kehittämiseen tutustuminen
+  \item jokin laajasti käytetyn korkean tason ohjelmointikielen oppiminen
+  \item suunnitella, ohjelmoida, testata ja dokumentoida ohjelmia hyvän ohjelmointityylin mukaisesti.
 \end{itemize}
 Vaikka kyseinen opetussuunnitelma on päivitetty useasti tämän jälkeen ja termin käytöstä on myöhemmissä versioissa luovuttu, jatketaan sen käyttämistä lyhenteenä ohjelmoinnin alkeiskurssille~\cite{H10}.
 
+Tässä tutkielmassa käyn ensin läpi, mitä on ohjelmointitaito ja avaan sitä Bloomin taksonomian avulla. Esittelen viisi arviointimenetelmää, joita on käytetty ohjelmointikurssien arviointiin ja arvioin niitä keskenään.
+
 \section{Ohjelmointitaito}
 
-Tietokoneohjelma on sarja käskyjä, jotka suorittamalla saadaan tehtyä jokin tietty tehtävä.
-
-Ohjelmointi on helppo mieltää pelkäksi ohjelmien kirjoittamiseksi. Todellisuudessa siihen liittyy tiivisti myös vähintään ohjelmien muokkaaminen, korjaaminen, testaaminen ja dokumentointi.
+Tietokoneohjelma on sarja käskyjä, jotka suorittamalla saadaan tehtyä jokin tietty tehtävä. Näiden ohjelmien kirjoittamista kutsutaan ohjelmoinniksi ja ohjelmointitaito kuvaa henkilön kykyä ohjelmoida. Ohjelmointi-käsitteeseen liittyy tiivisti myös ohjelmien muokkaaminen, korjaaminen, testaaminen ja dokumentointi.
 
 Koneet ymmärtävät vain hyvin matalalla tasolla olevaa konekieltä, jonka kirjoittaminen on hidasta ja virhealtista. Siksi ohjelmointi tapahtuu lähes aina jollakin korkeamman tason kielellä, joka muunnetaan erillisellä käännösohjelmalla konekieleksi.
 
 Nykyään komentosarjakielillä voi tuottaa täysin korkean tason ohjelmointikielillä tehtyjä vastaavia ohjelmia, vaikka niitä ei käännetäkään konekielisiksi, vaan tulkkiohjelma suorittaa ne lause kerrallaan.
 
-Ohjelmointitaito kuvaa henkilön kykyä ohjelmoida.
+Seuraavassa kappaleessa esittelen Bloomin taksonomian ja tutkin sen käyttöä ohjelmointitaidon arviointiin.
 
+\subsection{Bloomin taksonomia ja ohjelmointitaidon arviointi}
 
 Benjamin Bloom esitti vuonna 1956 yhdessä muiden opetuksesta kiinnostuneiden psykologien kanssa luokitteluasteikon, jolla voi määritellä henkilön taitotason jossakin tietyssä asiassa~\cite{BLOOM56}. Tämä Bloomin taksonomiaksi nimetty järjestelmä sisältää kuusi osaamisen tasoa:
 
@@ -104,7 +107,7 @@ Benjamin Bloom esitti vuonna 1956 yhdessä muiden opetuksesta kiinnostuneiden ps
 
 Perinteisesti kurssien oppimistavoitteet on ilmoitettu vain listana aiheista, ilman selitettä siitä, kuinka hyvin listatut asiat tulee hallita~\cite{SMS08}. Vaadittavan Bloom-tason määrittäminen kullekin aiheelle auttaa sekä kurssin pitäjää että opiskelijoita ymmärtämään paremmin mihin aiheisiin kurssilla keskitytään ja kuinka hyvin kukin käsiteltävistä asioista täytyy oppia. Kurssin pitäjä pystyy kohdistamaan paitsi materiaalin ja opetuksen vaadittuihin Bloom-tasoihin, myös koekysymykset voidaan kohdistaa tarkasti arvioimaan kohteena olevaa taitotasoa. Lisäksi myöhempien kurssien pitäjille on erittäin hyödyllistä nähdä kurssille tulevien opiskelijoiden lähtötaso aiheittain edeltävien kurssien oppimistavoitteista.
 
-Myös ohjelmointitaitoa voi arvioida Bloomin taksonomian asteikoilla esimerkiksi seuraavanlaisilla kysymyksillä:
+Ohjelmointitaitoa voi arvioida Bloomin taksonomian asteikoilla esimerkiksi seuraavanlaisilla kysymyksillä:
 
 \begin{description}
   \item[Tietäminen] \hfill \\
@@ -121,23 +124,29 @@ Myös ohjelmointitaitoa voi arvioida Bloomin taksonomian asteikoilla esimerkiksi
   "Vertaile kahta annettua ohjelmaa. Kumpi on parempi ja miksi?"
 \end{description}
 
+Anderson ja kumppanit uudistivat Bloomin taksonomiaa muuttaen luokkien nimiä ja järjestystä~\cite{AKA00}. Tietämisen he nimesivät uudelleen muistamiseksi ja syntetisoimisen luomiseksi. Lisäksi he vaihtoivat luomisen ja arvioimisen paikkoja keskenään, jolloin luomisesta tuli viimeisin luokka.
+
+Thompson ja kumppanit tutkivat kuuden eri oppilaitoksen ohjelmoinnin alkeiskurssien kokeita ja määrittelivät jokaisen kysymyksen uudistetun Bloomin taksonomian mukaisesti.~\cite{TLW08}. He havaitsivat, että kaikkia kysymyksiä ei pystynyt luokittelemaan pelkästään lukemalla ne. Tämä johtui ainakin osittain verbien, kuten \textit{kirjoita} ja \textit{arvioi} käytöstä tehtävänannoissa. Konsultoituaan kurssia järjestänyttä opettajaa he pääsivät pian yhteisymmärrykseen kysymysten luokituksista. Tämä osoittaa uudistetun Bloomin taksonomian toimivan tehokkaana luokitteluasteikkona ohjelmoinnin opetuksessa.
+
+Yksittäisen kysymyksen vaikeus riippuu paljon vastaajasta. Kysymykseen, johon vastaaminen yhdelle on vain tiedon muistamista (asteikon alin taso), saattaa toiselta vaatia uuden ratkaisun kehittämistä hänelle uuteen ongelmaan (asteikon korkein taso). Tämän vuoksi kysymykset on syytä laatia siten, että suurin osa vastaajista kokee ne halutulla tasolla.
+
+Thompson ja kumppanit löysivät useita kysymyksiä, joiden luokitus uudistetussa Bloomin taksonomiassa riippui sanamuodoista. Esimerkiksi kysymys, joka oli tarkoitettu muistamisen tasolle, voitaisiin ilmaista toisin sanoin siten, että siihen vastaamiseen vaaditaan ymmärtämisen tai analysoimisen taitoja. Täten heistä on tärkeää, että koko opetushenkilökunnalla on yhtenäinen käsitys uudistetun Bloomin taksonomian tulkinnasta, etenkin kursseilla, joita järjestämässä on useampi opettaja.
+
+\subsection{Ohjelmoinnin oppimisprosessi}
+
 Robins, J. Rountree ja N. Rountree käyvät läpi psykologista ja opetuksellista kirjallisuutta aloittelevien ohjelmoijien oppimisprosessiin liittyen~\cite{RRR03}. He havaitsivat sen olevan laaja ja monimutkainen, mutta he löysivät siitä monia suuntauksia.
 
-Ensimmäisenä trendinä kokeneet ohjelmoijat erottuvat selvästi aloittelijoista, joiden vajavaiset tiedot on helppo havaita.
-
-Toisena trendinä on tiedon ja strategioiden erottaminen. On edelleen avoin kysymys kuinka uudet strategiat syntyvät ja kuinka ne liittyvät perustana oleviin tietoihin.
+Ensimmäisenä trendinä kokeneet ohjelmoijat erottuvat selvästi aloittelijoista, joiden vajavaiset tiedot on helppo havaita. Toisena on tiedon ja strategioiden erottaminen. On edelleen avoin kysymys kuinka uudet strategiat syntyvät ja kuinka ne liittyvät perustana oleviin tietoihin.
 
 Kolmantena trendinä erotetaan olemassa olevan ohjelman toiminnan ymmärtäminen ohjelman tuottamisesta. Luodessaan ohjelmia aloittelevien ohjelmoijien täytyy luoda ensin suunnitelma siitä, mitä hänen pitää tehdä. Kokeneemmat ohjelmoijat ovat usein tehneet ennen vähintään samantapaisia rakenteita ja voivat uudelleenkäyttää näitä suunnitelmiaan. Ohjelmoimaan opetellessa ongelmanratkaisukyvyn kehittäminen on näin ollen hyödyllistä. On helposti nähtävissä ohjelmien luku- ja kirjoitustaidon liittyvän toisiinsa, mutta on nähty viitteitä siitä, että nämä eivät korreloi vahvasti. Siispä hyvä ohjelman toiminnan lukutaito ei takaa, että henkilö osaa kirjoittaa vastaavan ohjelman.
 
 Neljäs, myöhemmin ilmaantunut trendi, on olio-ohjelmoinnin vertaaminen proseduraaliseen ohjelmointiin. Ajatukselle ongelmanratkaisun olemisesta huomattavasti helpompaa olio-ohjelmoinnilla ei löydy juurikaan todisteita, vaan monet näkevät molemmat oleellisina. Olio-ohjelmointiin keskittyvillä kursseilla kannattaa siis painottaa myös proseduaalisia menetelmiä, ohjelman suoritusjärjestystä (flow of control) ja ohjelman suunnittelua.
 
-On selvää että aloittelevat ohjelmoijat kohtaavat suuria haasteita. Ohjelmoimaan oppiminen vaatii monimutkaisien taitojen omaksumista ja siihen liittyvien strategioiden kehittämistä. Alkeiskurssin materiaalin tulisi olla yksinkertaista ja esitellä uusia asioita yksitellen sitä mukaa, kun opiskelijoiden kokemus karttuu.
+On selvää että aloittelevat ohjelmoijat kohtaavat suuria haasteita~\cite{RRR03}. Ohjelmoimaan oppiminen vaatii monimutkaisien taitojen omaksumista ja siihen liittyvien strategioiden kehittämistä. Alkeiskurssin materiaalin tulisi olla yksinkertaista ja esitellä uusia asioita yksitellen sitä mukaa, kun opiskelijoiden kokemus karttuu.
 
 Aloittelevien ohjelmoijien täytyy opetella kehittämään suunnitelma ratkaistavasta ongelmasta, oppia ajattelemaan mitä tietokone tekee, ohjelmoimaan suunnitelman mukainen ohjelma ja kehittää testaustaitoja ohjelmien korjaamista varten. Aloittelijoilla on tyypillisesti monia vajavaisuuksia sekä tiedoissaan, että toimintastrategioissan.
 
-Silmukat, ehtolauseet, taulukot ja rekursio ovat osoittautuneet useille opiskelijoille haasteellisiksi, joten niiden opetukseen kannattaa kiinnittää huomiota. Opiskelijoiden tiedoissa vakavimpien puutteiden on kuitenkin näytetty liittyvän ongelmanratkaisuun, suunnitelmien tekoon ja suunnitelmien toteuttamiseen ohjelmaksi.
-
-Ohjelmoimaan ei opi kuin tekemällä. Ohjelmointitehtävien on havaittu olevan keskeinen osa oppimisprosessia kurssien aikana. Lisäksi isompien projektitehtävien teettäminen kurssilla saattaa olla avuksi.
+Silmukat, ehtolauseet, taulukot ja rekursio ovat osoittautuneet useille opiskelijoille haasteellisiksi, joten niiden opetukseen kannattaa kiinnittää huomiota. Opiskelijoiden tiedoissa vakavimpien puutteiden on kuitenkin näytetty liittyvän ongelmanratkaisuun, suunnitelmien tekoon ja suunnitelmien toteuttamiseen ohjelmaksi. Näiden ongelmien välttämisessä ja ratkaisemisessa ohjelmointitehtävien on havaittu olevan keskeinen rooli.
 
 Perkins ja kumppanit jakavat ihmiset heidän käytöksensä mukaan kahteen ryhmään, sen perusteella miten he reagoivat kohdatessaan ongelman ohjelmoinnissa~\cite{PHHMS86,RRR03}. Nämä ryhmät ovat pysähtyjät (stoppers) ja liikkujat (movers). Ongelman kohdatessaan pysähtyjät nimensä mukaan lopettavat toimintansa ja luopuvat toivosta päästä yli ongelmastaan. Opiskelijoiden asenne virheisiin on tärkeässä osassa. Henkilöistä, jotka turhautuvat tai kokevat muuten negatiivisen emotionaalisen reaktion kohdatessaan virheen, tulee helposti pysähtyjiä.
 
@@ -153,26 +162,30 @@ Paperikokeiden tueksi on esitetty muun muassa ohjelmointikokeita (lab practicum,
 
 \subsection{Paperikokeet}
 
-Paperikokeet ovat perinteinen tapa arvioida opiskelijan tietoja. Petersen, Craig ja Zingaro tutkivat 15 ohjelmoinnin peruskurssin (CS1) koetta 14:sta eri yliopistosta ja yrittävät selvittää, mitä ohjelmointitaitoja ja käsitteiden tuntemusta kunkin kysymyksen ratkaisemiseen tarvitaan~\cite{PCZ11}. He uskovat useiden käsitteiden oppimisen olevan toisistaan riippuvaista: opiskelija, joka ei täysin hallitse yhtä konseptia, ei pysty täysin oppimaan toista, joka tukeutuu ensimmäiseen. Tämän takia opiskelijoiden on vaikeaa näyttää osaamistaan kokeissa.
+Paperikokeet ovat perinteinen tapa arvioida opiskelijan tietoja. Petersen, Craig ja Zingaro tutkivat 15 ohjelmoinnin peruskurssin (CS1) koetta 14:sta eri yliopistosta ja yrittivät selvittää, mitä ohjelmointitaitoja ja käsitteiden tuntemusta kunkin kysymyksen ratkaisemiseen tarvitaan~\cite{PCZ11}. He uskovat useiden käsitteiden oppimisen olevan toisistaan riippuvaista: opiskelija, joka ei täysin hallitse yhtä käsitettä, ei pysty täysin oppimaan toista, joka tukeutuu ensimmäiseen. Tämän takia opiskelijoiden on vaikeaa näyttää osaamistaan kokeissa.
 
-\begin{table}[b]
-  \begin{tabular}{ c c c }
-    program structure & function structure & data flow \\
-    trivial syntax & variables & expressions \\
-    data types & booleans & if-else \\
-    sequential control flow & input/output & definite loops \\
-    indefinite loops & nested loops & strings \\
-    lists (arrays) & collections & trees \\
-    recursion & exceptions & object structure \\
-    basic OO & accessors/mutators & reference types \\
-    constructors & inheritance & polymorphism \\
-    visibility/scope \\
+\begin{table}
+  \begin{tabular}{ c c }
+    ohjelman rakenne & funktion rakenne \\
+	tiedon virtaus (data flow) & syntaksi \\
+    muuttujat & lausekkeet (expressions) \\
+    tietotyypit & totuusarvot \\
+	ehtolauseet & ohjelman suoritusjärjestys (control flow) \\
+    luku/kirjoitus (input/output) & silmukat \\
+    indefiniittiset silmukat & sisäkkäiset silmukat \\
+	merkkijonot & taulukot/listat \\
+    kokoelmat (collections) & puut \\
+    rekursio & poikkeukset \\
+	olio-ohjelmointi & olion rakenne \\
+    aksessorit/mutaattorit & viittausmuuttujat \\
+    konstruktorit & monimuotoisuus (polymorphism) \\
+    perintä & näkyvyysalue (visibility/scope) \\
   \end{tabular}
 \caption{Alkeiskurssin 28 oleellisinta käsitettä}
 \label{tab:kasitteet}
 \end{table}
 
-Avukseen tutkimuksessa Petersen, Craig ja Zingaro ottivat yhdeksän kokenutta tietojenkäsittelytieteen opettajaa ja yhdessä he kokosivat useiden lähteiden perusteella 28 oleellisinta alkeiskurssilla tarvittavaa käsitettä \ref{tab:kasitteet}. Kokeiden jokaisesta kysymyksestä määritettiin sen muoto (monivalinta, lyhyt vastaus, koodin kirjoittaminen, kaavion piirto), sisältö (koodin kirjoitus, koodin luku, käsitteiden hallinta, ei ohjelmointiin liittyvä), sekä laskettiin, kuinka monen käsitteen osaamista kysymyksessä arvioidaan ja kuinka monta käsitettä lisäksi on hallittava osatakseen vastata kysymykseen.
+Avukseen tutkimuksessa Petersen, Craig ja Zingaro ottivat yhdeksän kokenutta tietojenkäsittelytieteen opettajaa ja yhdessä he kokosivat useiden lähteiden perusteella 28 oleellisinta alkeiskurssilla tarvittavaa käsitettä (Taulukko \ref{tab:kasitteet}). Kokeiden jokaisesta kysymyksestä määritettiin sen muoto (monivalinta, lyhyt vastaus, koodin kirjoittaminen, kaavion piirto), sisältö (koodin kirjoitus, koodin luku, käsitteiden hallinta, ei ohjelmointiin liittyvä), sekä laskettiin, kuinka monen käsitteen osaamista kysymyksessä arvioidaan ja kuinka monta käsitettä lisäksi on hallittava osatakseen vastata kysymykseen.
 
 Kokeet sisälsivät yhteensä 208 kysymystä, joista 95 (45,7\%) sisälsi koodin kirjoittamista ja 80 (38,5\%) koodin lukemista tai ohjelmointikäsitteiden hallintaa. Koodin kirjoittamista sisältävistä 12 luokiteltiin tyypin "lyhyt vastaus" alle. Niissä tehtävänä oli täydentää valmiina annettua koodia, esimerkiksi lisäämällä oikea lopettamisehto silmukkaan. Loput 83 kysymystä olivat muotoa "kirjoita tämä funktio/metodi/luokka/ohjelma".
 
@@ -220,7 +233,25 @@ Peruskäsitteitä ja yksinkertaista logiikkaa käsittelevissä kysymyksissä ryh
 
 \subsection{Automaattinen arviointi}
 
+Saikkonen, Malmi ja Korhonen esittelevät artikkelissaan "Fully automatic assessment of programming exercises" Scheme-roboa: työkalua ohjelmointitehtävien automaattiseen arviointiin~\cite{SMK01}. Scheme-robo arvioi yksittäisiä funktioita koko ohjelman sijasta ja tarjoaa vastauksen oikeellisuuden tarkistuksen lisäksi työkaluja ohjelmien rakenteen, suoritusajan ja mahdollisen plagionnin analysointiin.
 
+Vuonna 1997 kasvaneiden opiskelijamäärien vuoksi Helsingin Teknillisen Korkeakoulun resurssit eivät riittäneet opiskelijoiden tehtävien manuaaliseen tarkastamiseen, joten harjoitustehtävistä jouduttiin tekemään vapaaehtoisia. Kurssin tulosten kannalta tämä oli huono asia, sillä opiskelijat eivät tehneet enää yhtä paljon tehtäviä niiden muututtua vapaaehtoisiksi. Tämän ongelman ratkaisemiseksi Saikkonen, Malmi ja Korhonen kehittivät Scheme-robon.
+
+Scheme-robo tarkastaa opiskelijoiden tehtävät täysin automaattisesti. Arviointi tapahtuu verkossa, joten opiskelija saa tietää tulokset lähes välittömästi ja pystyy lähettämään vastauksensa uudelleen korjattuaan ratkaisunsa. Palautusten määrää rajoittamalla opiskelijat pakotetaan miettimään ratkaisujensa virheitä sen sijaan, että he selvittäisivät ongelmaa yrityksen ja erehdyksen kautta.
+
+Automaattisessa arvioinnissa ongelmana saattaa usein olla se, että opiskelijan ohjelman tuloste eroaa hiukan odotetusta arvosta, jolloin tarpeeksi lähellä oikeaa oleva ratkaisu hylätään. Scheme-robolla tätä ongelmaa ei ole, sillä suurin osa tehtävistä on on funktioita, jotka palauttavat arvon tulostamisen sijasta. Tämän paluuarvon oikeellisuutta mitataan Scheme-kielen tavallisilla yhtäläisyysvertailuilla.
+
+Schemen Lisp-tyylinen syntaksi mahdollistaa opiskelijoiden koodin rakenteen analysoinnin. Tämä on erityisen hyödyllistä etenkin tehtävissä, joissa pyydetään täydentämään annettua koodia. Myös plagioinnin tunnistaminen on mahdollista koodin rakenteen analysoinnin avulla.
+
+Opiskelijat palauttavat tehtävänsä Scheme-robolle sähköpostilla ja se vastaa yleensä noin kymmenen minuutin kuluessa. Myös uudet tehtävät lähetetään opiskelijoille automaattisesti ja opiskelijat voivat halutessaan kysyä pisteitään sähköpostitse.
+
+Scheme-robo pitää lokia tehdyistä tapahtumista. Niistä selviää opiskelijoiden palauttaneen tehtävitä aktiivisimmin aikarajoja edeltäneinä vuorokausina. Vuoden 1999 kurssilla noin tuhat tehtävää palautettiin viimeisen päivän aikana ennen ensimmäistä aikarajaa ja vain 60 sitä seuraavana päivänä.
+
+Syksyn 2000 kurssille osallistui 350 opiskelijaa. Kurssin harjoitukset jaettiin viiteen kahdentoista tehtävän kierrokseen, joista jokainen sisälsi neljä pakollista tehtävää. Opiskelijat tekivät keskimäärin viisi tehtävää kunkin kierroksen aikana. Ylimääräisistä tehtävistä sai lisäpisteitä kokeeseen.
+
+Lokakuussa 2000 Saikkonen, Malmi ja Korhonen pyysivät kurssia suorittaneilta palautetta Scheme-robosta. Kyselyyn vastasi 229 opiskelijaa, joista 80\% piti automaattista arviointia yleisesti hyvänä ideana. Scheme-robosta pidettiin myös: vain 10\% opiskelijoista koki sen arvioineen tehtäviä huonosti. Loput näkivät sen suoriutuneen kohtalaisen hyvin (41\%), hyvin (44\%) tai erinomaisesti (6\%).
+
+Automaattinen arviointi ei sovellu yksilön ohjelmointitaidon arviointiin, sillä kyseessä on kotona tehtävien harjoitusten automaattinen tarkastus. Automaattinen arviointi on pikemminkin työkalu arviointiin kuin arviointimenetelmä. Daly ja Waldron käyttävät sitä ohjelmointikokeissa, joissa se toimii hyvin osana arviointitekniikkaa ja on pätevä työkalu ohjelmointitaidon arviointiin.
 
 \section{Arviointimenetelmien arviointi}
 
